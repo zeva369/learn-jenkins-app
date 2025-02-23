@@ -45,7 +45,7 @@ pipeline {
                     }
                     steps {
                         sh '''
-                            npm insall serve
+                            npm install serve
                             node_modules/.bin/serve -s build &
                             sleep 10
                             npx playwrigth test --reporter=html
