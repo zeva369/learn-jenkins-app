@@ -46,6 +46,9 @@ pipeline {
                     steps {
                         sh '''
                             npm insall serve
+                            node_modules/.bin/serve -s build &
+                            sleep 10
+                            npx playwrigth test --reporter=html
                         '''
                     }
                 } 
@@ -61,7 +64,7 @@ pipeline {
             steps {
                 sh '''
                     npm install netflify-cli
-                    netlify --version
+                    node_modules/.bin/netlify --version
                 '''
             }
         }
